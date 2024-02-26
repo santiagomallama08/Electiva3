@@ -22,15 +22,51 @@ class ScaffoldScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Center'), // No es necesario const aquí
+        title: Text('Center'),
         backgroundColor: Colors.blue,
       ),
       body: SafeArea(
-        child: Center(
-          child: Text('Hi Scaffold'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network(
+              'https://i.pinimg.com/236x/4a/f1/20/4af12085781ec3a29d1aa45f340ea01a.jpg',
+              height: 100,
+              width: 100,
+            ),
+            Card(
+              child: ListTile(
+                title: Text('Card Title'),
+                subtitle: Text('Card Subtitle'),
+                leading: Icon(Icons.album),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+              },
+              child: Text('Press me'),
+            ),
+            Icon(Icons.star, size: 50, color: Colors.yellow),
+            Expanded(
+              child: ListView(
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.list),
+                    title: Text('Item 1'),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.list),
+                    title: Text('Item 2'),
+                  ),
+                  // Agrega más elementos de la lista según sea necesario
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
+
 
